@@ -1,47 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-void input(int *p, int k)
-{
+
+int n1, n2;
+
+int Func(int *arr1, int *arr2) {
     int i;
-    for(i=0;i<k;i++)
-    {
-        scanf("%d",&p[i]);
+    for(int i = 0; i < n1; i++) {
+        int j;
+
+        for(j = 0; j < n2; j++) {
+            if(arr1[i+j] != arr2[j]) {
+                break;
+            }
+        }
+
+        if(j >= n2) {
+            return 1;
+        }
     }
+
+    return 0;
 }
-int fun(int *x, int *y, int n, int m)
-{
-    int i,j,start;
-    for(i=0;i<n;i++)
-    {
-        if(x[i]==y[0])
-          {
-            start=i;
-            break;
-          }
-    }
-    if(n-start<m-1) return 0;
-    j=1;
-    for(i=start+1;i<n;i++,j++)
-      if(x[i]!=y[start+j]) return 0;
-    return 1;
-}
+
 int main() {
-    // 여기에 코드를 작성해주세요.
-    int n,m;
-    int i,j;
-    int *p1, *p2;
-    int sw;
-    scanf("%d %d",&n,&m);
-    p1=(int *)malloc(sizeof(int)*n);
-    p2=(int *)malloc(sizeof(int)*m);
-    input(p1,n);
-    input(p2,m);
-    sw=fun(p1,p2,n,m);
-    if(sw==1)
-      printf("Yes\n");
-    else
-      printf("No\n");
-    free(p1);
-    free(p2);
+    int *arr1, *arr2;
+
+    scanf("%d %d", &n1, &n2);
+
+    arr1 = (int*)malloc(sizeof(int) * n1);
+    arr2 = (int*)malloc(sizeof(int) * n2);
+
+    for(int i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    for(int i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    if(Func(arr1, arr2) == 1) {
+        printf("Yes");
+    }
+    else {
+        printf("No");
+    }
+
     return 0;
 }
