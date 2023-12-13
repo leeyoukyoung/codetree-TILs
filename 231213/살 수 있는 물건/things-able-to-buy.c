@@ -8,7 +8,7 @@ int main() {
     {
         printf("book");
     }
-    else if(3000>n>=1000)
+    else if(n>=1000)
     {
         printf("mask");
     }
