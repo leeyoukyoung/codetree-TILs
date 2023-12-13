@@ -4,11 +4,11 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int n;
     scanf("%d",&n);
-    if(n=100)
+    if(n==100)
     {
         printf("pass");
     }
-    else if(n<100)
+    else
     {
         printf("failure");
     }
