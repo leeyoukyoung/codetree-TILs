@@ -2,19 +2,17 @@
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int a,b,c;
-    a=1;
-    b=2;
-    c=3;
-    if(a)
+    int a;
+    scanf("%d",&a);
+    if(a==1)
     {
         printf("John");
     }
-    else if(b)
+    else if(a==2)
     {
         printf("Tom");
     }
-    else if(c)
+    else if(a==3)
     {
         printf("Paul");
     }
