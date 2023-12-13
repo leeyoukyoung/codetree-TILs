@@ -8,7 +8,7 @@ int main() {
     {
         printf("pass");
     }
-    else
+    else if(n<100)
     {
         printf("failure");
     }
